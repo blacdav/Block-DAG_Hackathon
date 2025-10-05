@@ -1,35 +1,25 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { WagmiProvider } from "wagmi";
+import "./App.css";
+import { config } from "./utils/web3";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ConnectWalletButton } from "./components/web3/ConnectWalletButton";
 
+const queryClient = new QueryClient();
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <WagmiProvider config={config}>
+      <QueryClientProvider client={queryClient}>
+        <div className="min-h-screen bg-gray-50 p-8">
+          <header className="max-w-4xl mx-auto">
+            <div className="flex justify-between items-center">
+              <h1 className="text-2xl font-bold text-gray-900">PrivShare</h1>
+              <ConnectWalletButton />
+            </div>
+          </header>
+        </div>
+      </QueryClientProvider>
+    </WagmiProvider>
+  );
 }
 
-export default App
+export default App;
