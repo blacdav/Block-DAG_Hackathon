@@ -1,0 +1,42 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "secure file sharing + access receipts",
+  "keywords": [
+    "private",
+    "share",
+    "web3",
+    "files",
+    "encrypt",
+    "encryption",
+    "encrypted"
+  ],
+  "homepage": "https://github.com/blacdav/PrivShare#readme",
+  "bugs": {
+    "url": "https://github.com/blacdav/PrivShare/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blacdav/PrivShare.git"
+  },
+  "license": "ISC",
+  "author": "team2",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node dist/index",
+    "dev": "nodemon src/index",
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.7.0",
+    "install": "^0.13.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
