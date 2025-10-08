@@ -1,1 +1,8 @@
 @import "tailwindcss";
+@import "@fontsource/lexend/400.css";
+@import "@fontsource/lexend/600.css";
+@import "@fontsource/lexend/800.css";
+
+:root {
+  --font-sans: "Lexend", sans-serif;
+}
